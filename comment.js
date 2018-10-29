@@ -24,6 +24,7 @@ const toCrawlCtripWebPage = async (url, browser) => {
 	let page = await browser.newPage();
 	await page.goto(url);
 	// 按时间排序
+	await page.waitFor('.J_ctrip_pop');
 	await page.select('select.select_sort', '1');
 	await page.waitFor(3000);
 
@@ -84,7 +85,7 @@ const crawl_method = {
 const startWork = async() => {
 	let browser = await puppeteer.launch({
 		// 若是手动下载的chromium需要指定chromium地址, 默认引用地址为 /项目目录/node_modules/puppeteer/.local-chromium/
-		executablePath: 'D:\\Program Files\\chrome-win\\chrome.exe',
+		// executablePath: 'D:\\Program Files\\chrome-win\\chrome.exe',
 		//设置超时时间
 		timeout: 15000,
 		//如果是访问https页面 此属性会忽略https错误
