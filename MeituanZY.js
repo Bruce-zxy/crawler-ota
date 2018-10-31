@@ -32,7 +32,7 @@ const startWork = async () => {
 		// 打开开发者工具, 当此值为true时, headless总为false
 		devtools: false,
 		// 关闭headless模式, 不会打开浏览器
-		headless: true, 
+		headless: false, 
 		// 为每个页面设置一致的视口。默认为800x600视口。null禁用默认视口。
 		defaultViewport: null, 
 		// 取消显示控制信息的提示栏
