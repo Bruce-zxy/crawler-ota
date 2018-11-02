@@ -60,36 +60,57 @@ const toCrawlCtripWebPage = async (url, browser) => {
 	return comment_array;
 }
 
-const toCrawlLYWebPage      = async (url, browser) => {
+
+const toCrawlCtripZYWebPage   = async (url, browser) => {
 	let page = await browser.newPage();
 	await page.goto(url);
 	await page.close();
 }
 	
-const toCrawlMeituanWebPage = async (url, browser) => {
+const toCrawlCtripDLWebPage   = async (url, browser) => {
 	let page = await browser.newPage();
 	await page.goto(url);
 	await page.close();
 }
 	
-const toCrawlQunarWebPage   = async (url, browser) => {
+const toCrawlMeituanZYWebPage = async (url, browser) => {
 	let page = await browser.newPage();
 	await page.goto(url);
 	await page.close();
 }
 	
-const toCrawlAlitripWebPage = async (url, browser) => {
+const toCrawlMeituanDLWebPage = async (url, browser) => {
+	let page = await browser.newPage();
+	await page.goto(url);
+	await page.close();
+}
+	
+const toCrawlAlitripWebPage   = async (url, browser) => {
+	let page = await browser.newPage();
+	await page.goto(url);
+	await page.close();
+}
+	
+const toCrawlYaochufaWebPage  = async (url, browser) => {
+	let page = await browser.newPage();
+	await page.goto(url);
+	await page.close();
+}
+	
+const toCrawlLvmamaWebPage    = async (url, browser) => {
 	let page = await browser.newPage();
 	await page.goto(url);
 	await page.close();
 }
 
 const crawl_method = {
-	["携程"]: toCrawlCtripWebPage,
-	["同程"]: toCrawlLYWebPage,
-	["美团"]: toCrawlMeituanWebPage,
-	["去哪儿"]: toCrawlQunarWebPage,
-	["飞猪"]: toCrawlAlitripWebPage
+	["携程直营"]: toCrawlCtripZYWebPage, 
+	["携程代理"]: toCrawlCtripDLWebPage, 
+	["美团直营"]: toCrawlMeituanZYWebPage, 
+	["美团代理"]: toCrawlMeituanDLWebPage, 
+	["飞猪直营"]: toCrawlAlitripWebPage, 
+	["要出发EB"]: toCrawlYaochufaWebPage, 
+	["上海驴妈妈"]: toCrawlLvmamaWebPage
 }
 
 const startWork = async () => {
@@ -132,24 +153,25 @@ const startWork = async () => {
 		}
 	}, 5000, browser)
 
-	// 遍历配置文件中的产品信息
-	for (var i = 0; i < target_list.length; i++) {
-		// 获取产品名称、产品类型、OTA列表
-		let { TargetName, TargetType, OTAList } = target_list[i];
-		// 遍历某个产品下所有OTA展示该产品的链接
-		for (let ota_name in OTAList) {
-			if (OTAList.hasOwnProperty(ota_name)) {
-				console.log(`正在【打开】${ota_name}的${TargetName}产品页面...`);
-				try{
-					// 开始遍历
-					await crawl_method[ota_name](OTAList[ota_name], browser);
-				} catch(err) {
-					console.log(`【ERROR】>>>>> ${err.message}`);
-				}
-				console.log(`正在【关闭】${ota_name}的${TargetName}产品页面...`);
-			}
-		}
-	}
+
+	// // 遍历配置文件中的产品信息
+	// for (var i = 0; i < target_list.length; i++) {
+	// 	// 获取产品名称、产品类型、OTA列表
+	// 	let { TargetName, TargetType, OTAList } = target_list[i];
+	// 	// 遍历某个产品下所有OTA展示该产品的链接
+	// 	for (let ota_name in OTAList) {
+	// 		if (OTAList.hasOwnProperty(ota_name)) {
+	// 			console.log(`正在【打开】${ota_name}的${TargetName}产品页面...`);
+	// 			try{
+	// 				// 开始遍历
+	// 				await crawl_method[ota_name](OTAList[ota_name], browser);
+	// 			} catch(err) {
+	// 				console.log(`【ERROR】>>>>> ${err.message}`);
+	// 			}
+	// 			console.log(`正在【关闭】${ota_name}的${TargetName}产品页面...`);
+	// 		}
+	// 	}
+	// }
 
 
 };

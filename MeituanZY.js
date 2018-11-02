@@ -98,7 +98,7 @@ const startWork = async () => {
 	await page.mouse.click(x_start, y_start, { delay: 1000 });
 	await page.mouse.down(x_start, y_start);
 	await page.waitFor(500);
-	await page.mouse.move(x_end, y_end, { steps:30 });
+	await page.mouse.move(x_end, y_end, { steps: 30 });
 	await page.waitFor(500);
 	await page.mouse.up();
 
@@ -107,8 +107,8 @@ const startWork = async () => {
 
 
 
-	await page.close();
-	await browser.close();
+	// await page.close();
+	// await browser.close();
 };
 
 

@@ -1,11 +1,9 @@
-[{
-	"TargetName": "江西宾馆", 
-	"TargetType": "hotel", 
-	"OTAList": {
-		"携程": "http://hotels.ctrip.com/hotel/741692.html", 
-		"同程": "http://www.ly.com/HotelInfo-41501001.html", 
-		"美团": "https://www.meituan.com/jiudian/910133/", 
-		"去哪儿": "http://hotel.qunar.com/city/nanchang/dt-14/", 
-		"飞猪": "https://hotel.alitrip.com/hotel_detail2.htm?spm=181.11197625.4973973.5.17bb4a0aUvLGnJ&shid=10084908"
-	}
-}]
+{
+	"携程直营": "http://ebooking.ctrip.com", 
+	"携程代理": "http://www.vipdlt.com/ebkassembly/login.aspx", 
+	"美团直营": "https://eb.meituan.com/account/login", 
+	"美团代理": "https://epassport.meituan.com/account/login", 
+	"飞猪直营": "http://hotel.alitrip.com/apc/main.htm", 
+	"要出发EB": "http://eb.yaochufa.com/", 
+	"上海驴妈妈": "http://ebooking.lvmama.com/vst_ebooking/index.do"
+}
