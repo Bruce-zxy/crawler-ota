@@ -51,21 +51,21 @@ const startWork = async () => {
 	// 正在打开标签页
 	let page = await browser.newPage();
 	// 正在输入网址
-	await page.goto(`http://ebooking.ctrip.com/ebkassembly/login.aspx`);
+	await page.goto(`http://localhost:8080`);
 	// 注册全局函数
 	page = await toExposeFunction(page);
 
-	await toFillInInput([{
-		selector: "#userName", 
-		content: "huxian"
-	}, {
-		selector: "#userPwd", 
-		content: "huxian123"
-	}], page);
+	// await toFillInInput([{
+	// 	selector: "#userName", 
+	// 	content: "huxian"
+	// }, {
+	// 	selector: "#userPwd", 
+	// 	content: "huxian123"
+	// }], page);
 
-	// 点击登录
-	let login_button = await page.$('#loginbtndiv #accSubmit');
-	await login_button.click();
+	// // 点击登录
+	// let login_button = await page.$('#loginbtndiv #accSubmit');
+	// await login_button.click();
 
 
 	// await page.close();
